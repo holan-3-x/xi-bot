@@ -1,0 +1,53 @@
+models:
+  Prompt:
+    PromptText: TEXT
+    DateTime: DATETIME
+    UserID: id foreign:users.id
+
+  Session:
+    UserID: id foreign:users.id
+    StartTime: DATETIME
+    EndTime: DATETIME
+
+  Document:
+    Title: VARCHAR(255)
+    Content: BLOB
+    DateTime: DATETIME
+    UserID: id foreign:users.id
+    FileTypeCode: ENUM('PDF', 'TXT', 'CSV')
+
+  Summary:
+    SummaryText: TEXT
+    DateTime: DATETIME
+    DocumentID: id foreign:documents.id
+
+  RobotControl:
+    Command: VARCHAR(255)
+    DateTime: DATETIME
+    UserID: id foreign:users.id
+    UserRoles: ENUM('Admin')
+
+  UserPrompt:
+    PromptID: id foreign:prompts.id
+    PromptText: TEXT
+    DateTime: DATETIME
+    UserID: id foreign:users.id
+
+  SessionHistory:
+    SessionID: id foreign:sessions.id
+    PromptID: id foreign:prompts.id
+
+  Music:
+    Title: VARCHAR(255)
+    Artist: VARCHAR(255)
+    Genre: VARCHAR(255)
+    FilePath: VARCHAR(255)
+    UserID: id foreign:users.id
+    DateTime: DATETIME
+
+  Theme:
+    name: VARCHAR(255)
+    image: BLOB
+    userID: id foreign:users.id
+
+
