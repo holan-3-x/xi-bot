@@ -1,0 +1,3 @@
+<?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <img src="<?php echo e(asset($image->path)); ?>" alt="<?php echo e($image->name); ?>">
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php /**PATH C:\laragon\www\xibot\resources\views/show.blade.php ENDPATH**/ ?>
